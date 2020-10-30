@@ -81,6 +81,8 @@ AUTHENTICATION_BACKENDS = [
 
 ]
 
+site_id = 1
+
 WSGI_APPLICATION = 'boutique_ado_exercise_project.wsgi.application'
 
 
