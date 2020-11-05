@@ -22,6 +22,10 @@ body {
 }
 
 /* from Bulma */
+/* I've taken this icon class from another CSS framework similar to bootstrap called Bulma,
+which will ensure that whenever we use font awesome icons.
+They will always stay perfectly centred and have a consistent size
+unless we manually change it. */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -30,14 +34,23 @@ body {
     width: 1.5rem;
 }
 
+/* The logo font class will be used throughout this site
+to maintain consistency with the uppercase font of the logo
+whenever we want to call attention to something. */
 .logo-font {
     text-transform: uppercase;
 }
 
+/* And the main logo link class here
+just makes it so that the logo only takes up as much space 
+as the text requires and no more. */
 .main-logo-link {
     width: fit-content;
 }
 
+/* START:
+These next several lines are styling which we'll use consistently throughout
+the site for buttons so that they match the theme of the shop now button on the homepage. */
 .shop-now-button {
     background: black;
     color: white;
@@ -58,10 +71,21 @@ body {
     background: #222;
     color: white;
 }
+/* END */
 
+
+/* And finally I've added a text-black class and a border-black class
+similar to bootstraps colour helper classes like text success text info and so on.
+Because we will always want elements using these classes to obey them
+
+ */
 .text-black {
     color: #000 !important;
 }
+/* Bootstrap doesn't actually have a black class as of this recording.
+So I'm creating my own and I've marked them as important. 
+These classes will allow us to have both primary and secondary call-to-action styling
+on all site buttons. Giving our users a consistent user experience. */
 
 .border-black {
     border: 1px solid black !important;
