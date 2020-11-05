@@ -1,0 +1,22 @@
+/* First I'll set the HTML elements height to 100% as this
+will allow our h100 classes in vertical centering to work. */
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Next we need to add the background image to the body element. */
+    /* Which we can do with the size of cover and options of no-repeat center centre and fixed,
+        which will ensure that it stays put in the centre of the page. */
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    /* I also want to add a height calculation to the body element.
+    Which will be 100vh minus 164 pixels the eventual height of our top header. */
+    height: calc(100vh - 164px);
+
+    /* Finally I'll add a default font colour and font family for the body of the site. */
+    color: #555;
+    font-family: 'Lato';
+}
