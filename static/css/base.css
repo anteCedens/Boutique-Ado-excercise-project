@@ -95,6 +95,17 @@ on all site buttons. Giving our users a consistent user experience. */
     background: #000 !important;
 }
 
+/* full-page overlay in order to cover up the body's background image */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;             /* Fixed at the */
+	left: 0;            /* top left of */
+	position: fixed;    /* the screen. */
+	background: white;
+	z-index: -1; /* z-index of negative 1 to make sure that it sits behind all the content */
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
