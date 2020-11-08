@@ -23,15 +23,14 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3"> <!--Products will stack on mobile be side-by-side on small and medium screens, 
-                                                                            split into three columns on large, and four columns on extra-large.-->
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if product.image %}
-                                <a href="">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
@@ -52,31 +51,21 @@
                                 </div>
                             </div>
                         </div>
-                        <!--Also wrapping the extra small horizontal rule in a similar if statement, 
-                        just to be explicit about what we're doing though obviously, this isn't necessary
-                        since the counter will always be divisible by one.-->
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>
                             </div>
-                        {% endif %}
-                        <!--built-in django template tags in an if statement-->
-                        <!--if for loop.counter is divisible by two, then we want to render this column-->
-                        <!--And it'll be visible only on small and medium screens.-->                        
+                        {% endif %}                        
                         {% if forloop.counter|divisibleby:2 %}
                             <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
                                 <hr>
                             </div>
                         {% endif %}
-                        <!--On large screens, we need to do the same, but there will be three products in each row.-->
-                        <!--So let's use divisible by three, hiding it on everything except large.-->
                         {% if forloop.counter|divisibleby:3 %}
                             <div class="col-12 d-none d-lg-block d-xl-none mb-5">
                                 <hr>
                             </div>
                         {% endif %}
-                        <!--And finally let's handle extra-large screens which will have four products
-                        in each row so we'll want to render this extra one every four columns.-->
                         {% if forloop.counter|divisibleby:4 %}
                             <div class="col-12 d-none d-xl-block mb-5">
                                 <hr>
