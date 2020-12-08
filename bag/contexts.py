@@ -1,4 +1,9 @@
 from decimal import Decimal
+"""
+Using the decimal function for financial transactions - as using float
+is susceptible to rounding errors.
+So just in general using decimal is preferred when working with money because it's more accurate.
+"""
 from django.conf import settings
 
 def bag_contents(request):
