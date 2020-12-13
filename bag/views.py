@@ -81,4 +81,5 @@ def remove_from_bag(request, item_id):
         return HttpResponse(status=200)
 
     except Exception as e:
+        # Variable 'e' used to return the error message to the template in case anything goes wrong.
         return HttpResponse(status=500)
